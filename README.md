@@ -49,15 +49,21 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+      * the black graphics window changed size
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+      * the color of the graphics window changed 
     * What values make it gray?
+      * (.5,.5,.5,1.0)
     * What values make it yellow?
+      * (1.0,1.0,0.0,1.0)
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+      * in the top left corner of the computer screen 
 * Change the title.
     * Where is it on the screen?
+      * in the top left of the graphics window
     
 ## Drawing
 
@@ -78,13 +84,18 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+      * 0-1
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+      * right
     * Is the positive y direction up or down?
+      * down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+      * its multicolored and the colors kind of blend together 
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      * it has two points at the top 
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
