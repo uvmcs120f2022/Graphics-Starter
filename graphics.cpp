@@ -7,14 +7,14 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 1080;
+    height = 700;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(0.5f, 0.7f, 0.001f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -33,10 +33,27 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
-     */
+
+    // Set the color to draw
+//    // Note: you can change this at any time during the drawing process
+//    glColor3f(1.0, 1.0, 0.0);
+//    glBegin(GL_QUADS);
+//    // glVertex2i takes a 2-D (x, y) coordinate
+//    glColor3f(1.0, 0.5, 0.0);
+//    glVertex2i(60, 100);
+//    glColor3f(0.0, 0.01, 0.6);
+//    glVertex2i(60, 140);
+//    glVertex2i(100, 100);
+//    glVertex2i(100, 140);
+//    glEnd();
+    glColor3f(1.0, 0.5, 0.0);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(10, 60);
+    glVertex2i(10, 120);
+    glVertex2i(70, 120);
+    glVertex2i(70, 180);
+    glVertex2i(130, 180);
+    glEnd();
 
     
     glFlush();  // Render now
@@ -101,9 +118,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("I changed something!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
