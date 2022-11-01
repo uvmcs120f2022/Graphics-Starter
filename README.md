@@ -84,17 +84,23 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+      * Each of the 3 values goes from 0 to 1
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+      * The positive x direction is to the right
     * Is the positive y direction up or down?
+      * The positive y direction is down.
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+      * The quad is a gradient between the colors of the different vertexes 
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      * The quad now looks like a paralellogram that was folded over itself to create a square with a triangle cut out of the top.
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+      * If I use 6 coordinates, it makes 2 seperate triangles
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
 
