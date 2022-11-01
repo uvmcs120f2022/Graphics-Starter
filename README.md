@@ -53,12 +53,17 @@ Read through graphics.h and graphics.cpp and answer the following questions in y
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+      * The color of the rectangle changed
     * What values make it gray?
+      * 0.5, 0.5, 0.5, 1.0 is grey
     * What values make it yellow?
+      * 1.0, 1.0, 0.0, 1.0 is yellow
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+      * (0,0) is in the top left corner of the screen
 * Change the title.
     * Where is it on the screen?
+      * In the bar on the top of the window, aligned left
     
 ## Drawing
 
