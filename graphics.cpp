@@ -60,7 +60,31 @@ void display() {
     glVertex2i(75,50);
     glVertex2i(100,50);
     glEnd();
-    
+
+    glBegin(GL_TRIANGLE_STRIP);
+    glColor3f(1,0,0);
+    glVertex2i(100,0);
+    glColor3f(0,1,0);
+    glVertex2i(125,50);
+    glColor3f(0,0,1);
+    glVertex2i(150,0);
+    glColor3f(1,0,0);
+    glVertex2i(175,50);
+    glEnd();
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1,0,0);
+    glVertex2i(100+100,0);
+    glColor3f(0,1,0);
+    glVertex2i(125+100,50);
+    glColor3f(0,0,1);
+    glVertex2i(150+100,0);
+    glColor3f(1,0,0);
+    glVertex2i(175+100,50);
+    glColor3f(0,1,0);
+    glVertex2i(200+100,0);
+    glEnd();
+
     glFlush();  // Render now
 }
 
@@ -72,7 +96,20 @@ void kbd(unsigned char key, int x, int y)
         glutDestroyWindow(wd);
         exit(0);
     }
-    
+
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1,0,0);
+    glVertex2i(100+200,0);
+    glColor3f(0,1,0);
+    glVertex2i(125+200,50);
+    glColor3f(0,0,1);
+    glVertex2i(150+200,0);
+    glColor3f(1,0,0);
+    glVertex2i(175+200,50);
+    glColor3f(0,1,0);
+    glVertex2i(200+200,0);
+    glEnd();
+
     glutPostRedisplay();
 }
 

@@ -103,6 +103,7 @@ Besides GL_QUADS, there are many other shape options:
       * If I use 6 coordinates, it makes 2 seperate triangles
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+      * It connects to vertexes n-1 and n-2
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -110,10 +111,16 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+      * Each vertex connects to vertex 1 and vertex n-1
 
-If you were to draw a circle, which of the modes above would you use and why?
+__If you were to draw a circle, which of the modes above would you use and why?__
+If I was going to draw a circle, I would use GL_TRIANGLE_FAN, because with that mode you could specify the center of
+the circle as the first vertex and make the remaining vertices the points on the outside of the circle, whereas with 
+GL_TRIANGLE_STRIP you would have to make every other vertex the center of the circle. Therefore GL_TRIANGLE_FAN could
+draw a circle of a given resolution with fewer function calls.
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+Nothing is displayed on the screen
 
 ## Extra Time?
 
