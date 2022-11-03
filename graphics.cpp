@@ -58,8 +58,12 @@ void display() {
     glColor3f(0.0,1.0,1.0);
     glVertex2i(150, 250);
     glVertex2i(250, 250);
-
+    //3 more coordinates
+    glVertex2i(150, 275);
+    glVertex2i(250, 275);
+    glVertex2i(200, 300);
     glEnd();
+    //
     
     glFlush();  // Render now
 }
