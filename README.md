@@ -55,9 +55,9 @@ Note: If your graphics program continues to show up as a black box, hide/minimiz
     * What values make it gray? Cant figure out gray. nevermind. all 0.7s
     * What values make it yellow? 0 blue and about equal red and green
 * Scroll down to `main` and change the window position. 
-    * Where is (0, 0)?
+    * Where is (0, 0)? top left
 * Change the title.
-    * Where is it on the screen?
+    * Where is it on the screen? at the top of the window
     
 ## Drawing
 
@@ -77,31 +77,33 @@ glEnd();
 Note to Mac users running Catalina: If the red quad shows up in the bottom half of your screen, change the glViewport line at the top of the display function by multiplying the width and height arguments by 2.
 
 * Change the color of the quad by modifying the call to `glColor3f`.
-    * What is the range of values for each part of the color?
+    * What is the range of values for each part of the color? 0-1
 * Move the quad down and to the right by 50 pixels.
-    * Is the positive x direction left or right?
-    * Is the positive y direction up or down?
+    * Is the positive x direction left or right? right
+    * Is the positive y direction up or down? down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
-    * Describe the quad's appearance.
+    * Describe the quad's appearance. it looks like a rainbow
 * Swap the third and fourth coordinates of the quad.
-    * What does it look like?
+    * What does it look like? it has an empty triangle at the top because it drew to a different corner first
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
-    * Put six coordinates instead of 3. What happens?
+    * Put six coordinates instead of 3. What happens? it drew another triangle
 * Draw a new shape using GL_TRIANGLE_STRIP.
-    * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+    * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to? the last two
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
 ![Image of GL_TRIANGLE_FAN](triangle_fan.png)
 
 * Draw a new shape using GL_TRIANGLE_FAN.
-    * How does this one look different?
+    * How does this one look different? this one is connected to the first vertex
 
 If you were to draw a circle, which of the modes above would you use and why?
+Maybe I would use FAN and some function that kept adding vertexes to be connected to the first vertex
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+It doesn't draw nuthin
 
 ## Extra Time?
 
