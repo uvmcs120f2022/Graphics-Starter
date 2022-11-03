@@ -1,20 +1,21 @@
 #include "graphics.h"
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 840;
+    height = 600;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(1.0f, 1.0f, 0.5f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -34,10 +35,45 @@ void display() {
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
     
-    /*
-     * Draw here
-     */
+    glColor3f(0.8f, 0.2f, 0.5f);
+    glBegin(GL_QUADS);
 
+    glVertex2i(10 + 50, 50 + 50);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex2i(10 + 50, 90 + 50);
+    glColor3f(0.2f, 0.9f, 0.4f);
+    glVertex2i(50 + 50, 90 + 50);
+    glColor3f(1.0f, 0.1f, 0.6f);
+    glVertex2i(50 + 50, 50 + 50);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2i(100, 150);
+    glVertex2i(125, 100);
+    glVertex2i(150, 150);
+    glVertex2i(175, 100);
+    glVertex2i(200, 150);
+    glVertex2i(225, 100);
+    glEnd();
+
+    glBegin(GL_TRIANGLE_STRIP);
+    glVertex2i(100, 250);
+    glVertex2i(125, 200);
+    glVertex2i(150, 250);
+    glVertex2i(175, 200);
+    glVertex2i(200, 250);
+    glVertex2i(225, 200);
+    glEnd();
+
+    glBegin(GL_TRIANGLE_FAN);
+    int maxVert = 24;
+    glColor3f(0.6f, 0.1f, 0.242231f);
+    glVertex2i(500, 500);
+    for (int i = 0; i <= maxVert; ++i) {
+        glVertex2f(500 + 50 * std::cos((float(i) * 6.283f) / maxVert), 500 + 50 * std::sin(i * 6.283f / maxVert));
+    }
+
+    glEnd();
     
     glFlush();  // Render now
 }
@@ -101,9 +137,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Funyuns with Drawing!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);

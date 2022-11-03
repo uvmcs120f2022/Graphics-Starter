@@ -48,16 +48,22 @@ We are creating graphics using OpenGL and GLUT.
     
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
-    * What changed when you ran the program?
+    * What changed when you ran the program?  
+    The size of the window changed.
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+It changed the background color
     * What values make it gray?
+When r=g=b ie (0.7f, 0.7f, 0.7f)
     * What values make it yellow?
+rgb(1.0f, 1.0f, 0.0f)
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+The top left corner
 * Change the title.
     * Where is it on the screen?
+At the top of the window in the titlebar
     
 ## Drawing
 
@@ -78,19 +84,26 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+  0.0f - 1.0f
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+  Right
     * Is the positive y direction up or down?
+  Down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+  It looks like a mutant starburst 
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+It looks like its missing a triangle out of it side (sort of like a crown)
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+  It draws a second triangle
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+It connects to the last two vertex used.
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -98,10 +111,13 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+It creates a fan of triangles around a central vertex
 
-If you were to draw a circle, which of the modes above would you use and why?
+If you were to draw a circle, which of the modes above would you use and why?  
+You would use GL_TRIANGLE_FAN with a lot of vertexes to achieve a circle like look.
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+Nothing is drawn.
 
 ## Extra Time?
 
