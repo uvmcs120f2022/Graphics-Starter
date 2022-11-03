@@ -37,6 +37,16 @@ void display() {
     /*
      * Draw here
      */
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_QUADS);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 90);
+    glVertex2i(50, 50);
+    glEnd();
 
     
     glFlush();  // Render now
