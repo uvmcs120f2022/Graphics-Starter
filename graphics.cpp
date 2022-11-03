@@ -7,14 +7,14 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 700;
+    height = 700;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(0.7f, 0.5f, 0.0f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -37,6 +37,47 @@ void display() {
     /*
      * Draw here
      */
+    glColor3f(0.7,0.0,0.9);
+    glBegin(GL_QUADS);
+    glVertex2i(60, 100);
+    glColor3f(0.0,1.0,0.0);
+    glVertex2i(60, 140);
+    glColor3f(0.0,0.0,1.0);
+    glVertex2i(100, 100);
+    glColor3f(0.2,0.3,0.4);
+    glVertex2i(100, 140);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2i(0,0);
+    glVertex2i(50,400);
+    glVertex2i(50,100);
+//    glVertex2i(60,10);
+//    glVertex2i(600,400);
+//    glVertex2i(500,100);
+    glEnd();
+
+    glColor3f(0.9,0.4,0.3);
+    glBegin(GL_TRIANGLE_STRIP);
+    glVertex2i(200,30);
+    glVertex2i(180,90);
+    glVertex2i(200,170);
+    glVertex2i(230,210);
+    glVertex2i(300,320);
+    glEnd();
+
+    glColor3f(0.3,0.0,0.9);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(400,60);
+    glColor3f(0.0,0.3,0.6);
+    glVertex2i(360,180);
+    glColor3f(0.7,0.2,0.9);
+    glVertex2i(400,340);
+    glVertex2i(460,420);
+    glColor3f(0.2,0.8,0.2);
+    glVertex2i(600,640);
+    glEnd();
+
 
     
     glFlush();  // Render now
@@ -101,9 +142,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Graphics are Fun, Wooo!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
