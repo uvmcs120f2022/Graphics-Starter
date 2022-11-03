@@ -7,14 +7,14 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
+    width = 800;
     height = 500;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(1.5f, 0.5f, 0.6f, 1.0f); // Pink and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -101,9 +101,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Pink box" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
