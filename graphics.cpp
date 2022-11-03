@@ -39,7 +39,7 @@ void display() {
      */
     // Set the color to draw
     // Note: you can change this at any time during the drawing process
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(0.0, 1.0, 1.0);
     glBegin(GL_QUADS);
     // glVertex2i takes a 2-D (x, y) coordinate
     glVertex2i(10, 50);
