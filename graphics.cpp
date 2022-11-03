@@ -39,8 +39,56 @@ void display() {
      */
     // Set the color to draw
     // Note: you can change this at any time during the drawing process
+//    glColor3f(1.0, 0.0, 1.0);
+//    glBegin(GL_QUADS);
+//    // glVertex2i takes a 2-D (x, y) coordinate
+//    glColor3f(1.0, 0.0, 1.0);
+//    glVertex2i(60, 100);
+//    glColor3f(0.0, 0.0, 1.0);
+//    glVertex2i(60, 140);
+//    glColor3f(1.0, 1.0, 0.0);
+//    glVertex2i(100, 100);
+//    glColor3f(1.0, 0.0, 0.0);
+//    glVertex2i(100, 140);
+//    glEnd();
+
+//    glColor3f(1.0, 0.0, 1.0);
+//    glBegin(GL_TRIANGLES);
+//    // glVertex2i takes a 2-D (x, y) coordinate
+//    glColor3f(1.0, 0.0, 1.0);
+//    glVertex2i(60, 100);
+//    glColor3f(0.0, 0.0, 1.0);
+//    glVertex2i(60, 140);
+//    glColor3f(1.0, 1.0, 0.0);
+//    glVertex2i(100, 100);
+//    glColor3f(1.0, 0.0, 0.0);
+//    glVertex2i(100, 140);
+//    glColor3f(1.0, 1.0, 0.0);
+//    glVertex2i(200, 100);
+//    glColor3f(1.0, 0.0, 0.0);
+//    glVertex2i(100, 240);
+//    glEnd();
+
+//    glColor3f(1.0, 0.0, 1.0);
+//    glBegin(GL_TRIANGLE_STRIP);
+//    // glVertex2i takes a 2-D (x, y) coordinate
+//    glColor3f(1.0, 0.0, 1.0);
+//    glVertex2i(60, 100);
+//    glColor3f(0.0, 0.0, 1.0);
+//    glVertex2i(60, 140);
+//    glColor3f(1.0, 1.0, 0.0);
+//    glVertex2i(100, 100);
+//    glColor3f(1.0, 0.0, 0.0);
+//    glVertex2i(100, 140);
+//    glColor3f(0.0, 0.0, 0.0);
+//    glVertex3i(300, 300,300);
+//    glColor3f(1.0, 0.0, 0.0);
+//    glVertex2i(100, 240);
+//    glEnd();
+
+
     glColor3f(1.0, 0.0, 1.0);
-    glBegin(GL_QUADS);
+    glBegin(GL_TRIANGLE_FAN);
     // glVertex2i takes a 2-D (x, y) coordinate
     glColor3f(1.0, 0.0, 1.0);
     glVertex2i(60, 100);
@@ -50,9 +98,11 @@ void display() {
     glVertex2i(100, 100);
     glColor3f(1.0, 0.0, 0.0);
     glVertex2i(100, 140);
+    glColor3f(1.0, 1.0, 0.0);
+    glVertex2i(200, 100);
+    glColor3f(1.0, 0.0, 0.0);
+    glVertex2i(100, 240);
     glEnd();
-
-
     
     glFlush();  // Render now
 }
