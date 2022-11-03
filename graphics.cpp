@@ -33,12 +33,34 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
+
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 1.0, 1.0);
+
+    /**
+    glBegin(GL_QUADS);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(60, 100); // 1st
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(60, 140); // 2nd
+    glColor3f(0.0, 0.0, 1.0);
+    glVertex2i(100, 100); // 4th
+    glColor3f(1.0, 0.0, 0.0);
+    glVertex2i(100, 140); // 3rd
+    glEnd();
      */
 
-    
+    glBegin(GL_TRIANGLES);
+    glVertex2i(30,50);
+    glVertex2i(50,10);
+    glVertex2i(70,50);
+
+    glVertex2i(80, 50);
+    glVertex2i(100,10);
+    glVertex2i(120, 50);
+    glEnd();
+
     glFlush();  // Render now
 }
 

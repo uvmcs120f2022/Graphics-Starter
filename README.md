@@ -48,22 +48,16 @@ We are creating graphics using OpenGL and GLUT.
     
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
-    * What changed when you ran the program?
-    * The size of the window changed.
+    * What changed when you ran the program? The size of the window changed.
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
-    * What changed? 
-    * It changes the background color of the box.
-    * What values make it gray?
-    * 0.5f, 0.5f, 0.5f
-    * What values make it yellow?
-    * 1.0f, 1.0f, 0.0f
+    * What changed? It changes the background color of the box.
+    * What values make it gray? 0.5f, 0.5f, 0.5f
+    * What values make it yellow? 1.0f, 1.0f, 0.0f
 * Scroll down to `main` and change the window position. 
-    * Where is (0, 0)?
-    * Top left corner.
+    * Where is (0, 0)? Top left corner.
 * Change the title.
-    * Where is it on the screen?
-    * It is displayed on the top of the window.
+    * Where is it on the screen? It is displayed on the top of the window.
     
 ## Drawing
 
@@ -83,31 +77,31 @@ glEnd();
 Note to Mac users running Catalina: If the red quad shows up in the bottom half of your screen, change the glViewport line at the top of the display function by multiplying the width and height arguments by 2.
 
 * Change the color of the quad by modifying the call to `glColor3f`.
-    * What is the range of values for each part of the color?
+    * What is the range of values for each part of the color? 0.0 to 1.0
 * Move the quad down and to the right by 50 pixels.
-    * Is the positive x direction left or right?
-    * Is the positive y direction up or down?
+    * Is the positive x direction left or right? Right 
+    * Is the positive y direction up or down? Down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
-    * Describe the quad's appearance.
+    * Describe the quad's appearance. It's a cool gradient in each of the corners.
 * Swap the third and fourth coordinates of the quad.
-    * What does it look like?
+    * What does it look like? The top side of the quad is not straight, it has an indent.
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
-    * Put six coordinates instead of 3. What happens?
+    * Put six coordinates instead of 3. What happens? It plots all six points. In my case, I have two distinct triangles.
 * Draw a new shape using GL_TRIANGLE_STRIP.
-    * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+    * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to? It connects to the two closets vertices.
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
 ![Image of GL_TRIANGLE_FAN](triangle_fan.png)
 
 * Draw a new shape using GL_TRIANGLE_FAN.
-    * How does this one look different?
+    * How does this one look different? The triangles are distorted majorly.
 
-If you were to draw a circle, which of the modes above would you use and why?
+If you were to draw a circle, which of the modes above would you use and why? I would use triangle fan, because it be be applied to make a sort of radial shape.
 
-Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+Draw in a function other than display. What happens? (Hint: What *doesn't* happen?) The shape does not draw.
 
 ## Extra Time?
 
