@@ -42,10 +42,10 @@ void display() {
     glColor3f(0.0, 1.0, 1.0);
     glBegin(GL_QUADS);
     // glVertex2i takes a 2-D (x, y) coordinate
-    glVertex2i(60, 50);
-    glVertex2i(60, 90);
-    glVertex2i(100, 90);
-    glVertex2i(100, 50);
+    glVertex2i(60, 100);
+    glVertex2i(60, 140);
+    glVertex2i(100, 140);
+    glVertex2i(100, 100);
     glEnd();
 
     
