@@ -49,15 +49,23 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
-* Change the color in the initGL function. 
+      * Raising and lowering the width and height values expands and contracts the width and height of the window
+      * respectively.
+* Change the color in the initGL function.
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
-    * What changed? 
+    * What changed?
+      * The color of the graphics box.
     * What values make it gray?
+      * All values must be the same AND far enough away from 0 and 1.
     * What values make it yellow?
+      * The values that make it yellow _for me_ are 0.9, 0.8, 0.0, 0.1.
 * Scroll down to `main` and change the window position. 
-    * Where is (0, 0)?
+   * Where is (0, 0)?
+     * (0,0) places the window in the top-left of the screen.
 * Change the title.
     * Where is it on the screen?
+      * The title appears on the left side of the banner of the window 
+      * (the banner being the thin rectangle on top of the black screen).
     
 ## Drawing
 
@@ -78,13 +86,18 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+      * Each value can hold a number between 0 and 1 inclusive.
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+      * Right
     * Is the positive y direction up or down?
+      * Down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+      * The quad now appears to be a gradient of colors that becomes more like the color of a vertext the closer it gets to it.
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      * One side of the square ended up being concave (think if a square and an hourglass were either side of the same shape).
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
