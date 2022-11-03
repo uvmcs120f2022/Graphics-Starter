@@ -49,15 +49,21 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+    * *Answer: It moves the window around to the specified starting point (changing in reference to pixels)*
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
-    * What values make it gray?
+      * The color of the background 
+    * What values make it gray? 
+      * red: 52% green: 52% blue: 51%
     * What values make it yellow?
+      * red: 91%	green: 84%	blue 42% 
 * Scroll down to `main` and change the window position. 
-    * Where is (0, 0)?
+    * Where is (0, 0)? 
+      * The top left of the screen
 * Change the title.
     * Where is it on the screen?
+      *  It's the name of the window
     
 ## Drawing
 
@@ -78,19 +84,28 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+      * The range is 0 to 1 (must be a fraction)
+    
 * Move the quad down and to the right by 50 pixels.
-    * Is the positive x direction left or right?
+    * Is the positive x direction left or right? 
+      * Right
     * Is the positive y direction up or down?
+      *  Down
+
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+      * It's a gradient 
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      * It kind of looks like it collapsed on itself. It looks like two triangles overlapping.
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+      * There are now two triangles
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+      * The two on the right of the triangle 
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -98,10 +113,13 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+      * It looks more 3D
 
 If you were to draw a circle, which of the modes above would you use and why?
+*You would use GL_TRIANGLE_FAN because you need to be able to have a center vertex and have it "fan" around it?
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+* It didn't display anything 
 
 ## Extra Time?
 
