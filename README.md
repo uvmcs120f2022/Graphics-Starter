@@ -48,12 +48,12 @@ We are creating graphics using OpenGL and GLUT.
     
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
-    * What changed when you ran the program?
-* Change the color in the initGL function. 
+    * What changed when you ran the program? The window changed size
+* Change the color in the initGL function. The window changed color
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
-    * What values make it gray?
-    * What values make it yellow?
+    * What values make it gray? Cant figure out gray. nevermind. all 0.7s
+    * What values make it yellow? 0 blue and about equal red and green
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
 * Change the title.
