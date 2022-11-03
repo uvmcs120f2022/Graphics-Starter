@@ -7,14 +7,21 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 700;
+    height = 700;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+
+    glBegin(GL_QUADS);
+    glVertex2i(150, 50);
+    glVertex2i(150, 90);
+    glVertex2i(190, 90);
+    glVertex2i(190, 50);
+    glEnd();
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -33,11 +40,43 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
-     */
 
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(0.0, 0.0, 1.0);
+    glBegin(GL_QUADS);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(10, 50);
+    glColor3f(1.0, 0.0, 0.0);
+    glVertex2i(10, 90);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2i(50, 50);
+    glColor3f(0.0, 1.0, 0.0);
+    glVertex2i(50, 90);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2i(60, 50);
+    glVertex2i(60, 90);
+    glVertex2i(100,90);
+    glVertex2i(100, 50);
+    glVertex2i(140, 90);
+    glVertex2i(140, 50);
+    glEnd();
+
+    glBegin(GL_TRIANGLE_STRIP);
+    glVertex2i(10, 140);
+    glVertex2i(10, 100);
+    glVertex2i(50, 100);
+    glVertex2i(70, 160);
+    glEnd();
+
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(80, 140);
+    glVertex2i(80, 100);
+    glVertex2i(120, 100);
+    glVertex2i(140, 160);
+    glEnd();
     
     glFlush();  // Render now
 }
@@ -101,9 +140,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Fun with Drawing... Kind Of" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
