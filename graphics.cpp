@@ -36,21 +36,9 @@ void display() {
 
     // Set the color to draw
 // Note: you can change this at any time during the drawing process
-    glColor3f(1.0, 0.0, 0.0);
-    glBegin(GL_TRIANGLE_STRIP);
-// glVertex2i takes a 2-D (x, y) coordinate
-    glVertex2i(10, 50);
-    glVertex2i(10, 90);
-    glVertex2i(50, 50);
-    glColor3f(1.0, 0.0, 1.0);
-    glVertex2i(50, 90);
-    glVertex2i(90, 50);
-    glVertex2i(90, 90);
 
-    glEnd();
 
-    
-    glFlush();  // Render now
+  // Render now
 }
 
 // http://www.theasciicode.com.ar/ascii-control-characters/escape-ascii-code-27.html
@@ -85,13 +73,30 @@ void kbdS(int key, int x, int y) {
 }
 
 void cursor(int x, int y) {
-    
+
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(10+ x, 90 + y);
+    glVertex2i(10 + x, 50 + y);
+    glVertex2i(30 + x, 60 + y);
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(50 + x, 90 + y);
+    glVertex2i(30 + x, 110 + y);
+
+    glEnd();
+
+    glFlush();
+
     glutPostRedisplay();
+
+
 }
 
 // button will be GLUT_LEFT_BUTTON or GLUT_RIGHT_BUTTON
 // state will be GLUT_UP or GLUT_DOWN
 void mouse(int button, int state, int x, int y) {
+
     
     glutPostRedisplay();
 }
