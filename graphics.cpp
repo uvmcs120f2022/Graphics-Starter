@@ -7,8 +7,8 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 600;
+    height = 600;
 }
 
 /* Initialize OpenGL Graphics */
@@ -84,7 +84,8 @@ void display() {
     glVertex2i(500, 250);
     glVertex2i(525, 275);
     //4th coordinates and beyond
-
+    glColor3f(1.0,0.0,0.0);
+    glVertex2i(550, 300);
     glEnd();
     
     glFlush();  // Render now
