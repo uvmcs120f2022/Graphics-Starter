@@ -49,15 +49,21 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+      * the size of the window changed
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+      * the background color changed
     * What values make it gray?
+      * all values are 0.2
     * What values make it yellow?
+      * 1.0 for red and 1.0 for green, 0.0 for blue
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+      * the top left corner of the window is at the top left corner of the screen
 * Change the title.
     * Where is it on the screen?
+      * it's on the top bar of the window
     
 ## Drawing
 
@@ -78,19 +84,26 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+      * 0 to 1
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+      * goes right
     * Is the positive y direction up or down?
+      * positive goes up
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+      * it's a gradient effect
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      * it looks like two triangles, or one corner was folded over to the opposite side.
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+      * two triangles are created but connected
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+      * it connects the previous vertices.
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -98,10 +111,13 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+      * there are two triangles however they are right next to each other and make a fan like shape
 
-If you were to draw a circle, which of the modes above would you use and why?
+If you were to draw a circle, which of the modes above would you use and why? 
+*   I would use fan because it could eventually be an octagon shape and then the more vertices you add the more 'round' it gets
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+*   it just doesn't show up
 
 ## Extra Time?
 

@@ -7,14 +7,21 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
+    width = 700;
     height = 500;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    //glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    //glClearColor(0.2f, 0.2f, 0.2f, 1.0f); //gray
+    glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 90);
+    glVertex2i(40,70);
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -37,6 +44,70 @@ void display() {
     /*
      * Draw here
      */
+    glColor3f(1.0, 0.0, 0.0);
+
+    /**
+    glBegin(GL_TRIANGLES);
+    glVertex2i(60, 50);
+    glColor3f(0.0, 1.0, 0.0);
+    glVertex2i(60, 90);
+    glColor3f(1.0, 1.0, 0.0);
+    glVertex2i(110, 50);
+    glColor3f(0.4, 0.2, 0.0);
+
+    glColor3f(0.0, 1.0, 0.0);
+    glVertex2i(70, 110);
+    glColor3f(1.0, 1.0, 0.0);
+    glVertex2i(150, 20);
+    glColor3f(0.4, 0.2, 0.0);
+    glVertex2i(60, 50);
+    */
+
+    // glVertex2i takes a 2-D (x, y) coordinate
+    //glBegin(GL_QUADS);
+    /**
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 90);
+    glVertex2i(50, 50);
+     */
+
+    /**
+    //moved it right
+    glVertex2i(60, 50);
+    glColor3f(0.0, 1.0, 0.0);
+    glVertex2i(60, 90);
+    glColor3f(1.0, 1.0, 0.0);
+    //third
+    glVertex2i(110, 50);
+    glColor3f(0.4, 0.2, 0.0);
+    //fourth
+    //glVertex2i(110, 90);
+    //moved it down
+    glVertex2i(10, 0);
+    glVertex2i(10, 40);
+    glVertex2i(50, 40);
+    glVertex2i(50, 0);
+     */
+
+    /**
+    glBegin(GL_TRIANGLE_STRIP);
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 90);
+    glVertex2i(90, 140);
+    glVertex2i(120, 70);
+    glVertex2i(60, 90);
+     */
+
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 90);
+    glVertex2i(40,70);
+
+
+    glEnd();
 
     
     glFlush();  // Render now
@@ -103,7 +174,7 @@ int main(int argc, char** argv) {
     glutInitWindowSize((int)width, (int)height);
     glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Fun with Tess!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
