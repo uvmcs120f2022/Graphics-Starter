@@ -63,7 +63,18 @@ void display() {
     glVertex2i(250, 275);
     glVertex2i(200, 300);
     glEnd();
-    //
+
+    //Draw a triangle strip
+    glBegin(GL_TRIANGLE_STRIP);
+    glColor3f(1.0,0.5,1.0);
+    glVertex2i(200, 400);
+    glColor3f(0.25,0.25,1.0);
+    glVertex2i(150, 450);
+    glVertex2i(250, 450);
+    //4th coordinate
+    glColor3f(1.0,1.0,1.0);
+    glVertex2i(200, 500);
+    glEnd();
     
     glFlush();  // Render now
 }
