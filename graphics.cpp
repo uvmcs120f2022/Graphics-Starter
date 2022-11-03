@@ -14,7 +14,7 @@ void init() {
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(1.0f, 1.0f, 0.0f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -37,6 +37,19 @@ void display() {
     /*
      * Draw here
      */
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_TRIANGLE_FAN);
+// glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 50);
+    glVertex2i(50, 80);
+    glVertex2i(80, 60);
+    glVertex2i(100, 30);
+    //glVertex2i(50, 90);
+
+
+    glEnd();
 
     
     glFlush();  // Render now
@@ -101,9 +114,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Fun!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
