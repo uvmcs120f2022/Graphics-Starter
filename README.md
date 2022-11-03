@@ -49,15 +49,34 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+  
+  It change size! Wider!
+
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
-    * What changed? 
-    * What values make it gray?
+    * What changed?
+
+        Now Orange! Yay! New color achieved.
+  
+    * What values make it gray? 
+      
+      R=G=B with values under 1 and over 0
+      
     * What values make it yellow?
+  
+      (1.0f,1.0f,0.0f)
+  
 * Scroll down to `main` and change the window position. 
+
     * Where is (0, 0)?
+  
+       Mostly top left of my screen
+  
 * Change the title.
+
     * Where is it on the screen?
+      
+       It changed the title of the window!
     
 ## Drawing
 
@@ -78,17 +97,34 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+    
+    0 to 1 as a float
+
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+
+        It is to the right
+
     * Is the positive y direction up or down?
+
+        It is down
+
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+
+    It's a cool gradient
+
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+    
+    It looks like it's been folded
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+  
+    It makes 2 triangles
+
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
 
