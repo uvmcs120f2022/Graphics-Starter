@@ -7,14 +7,14 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 300;
+    height = 300;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(1.0f, 1.0f, 0.0f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -33,10 +33,28 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
-     */
+
+    // Set the color to draw
+// Note: you can change this at any time during the drawing process
+    glColor3f(0.0, 1.0, 1.0);
+    glBegin(GL_TRIANGLE_FAN);
+// glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(60, 100);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2i(60, 140);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(100, 100);
+    glVertex2i(160, 200);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2i(160, 240);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(200, 200);
+    glVertex2i(250,250);
+
+//    glColor3f(1.0, 1.0, 0.0);
+//    glVertex2i(100, 140);
+
+    glEnd();
 
     
     glFlush();  // Render now
@@ -83,6 +101,7 @@ void cursor(int x, int y) {
 void mouse(int button, int state, int x, int y) {
     
     glutPostRedisplay();
+
 }
 
 void timer(int dummy) {
@@ -101,9 +120,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Haaai:3" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);

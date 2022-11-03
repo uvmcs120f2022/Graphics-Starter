@@ -49,15 +49,21 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+    * the image box changed shape
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+    * It changed color
     * What values make it gray?
+    * 0.5 at all color values
     * What values make it yellow?
+    * 1, 1, and 0
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+    * top left corner
 * Change the title.
     * Where is it on the screen?
+    * at the top of the box
     
 ## Drawing
 
@@ -78,19 +84,26 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+    * zero to one
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+    * right
     * Is the positive y direction up or down?
+    * down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+    * its colors change at a gradient radiating from the corners
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+    * it looks folded in half
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+    * it makes another triangle
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+    * the last two ones i created
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -98,10 +111,13 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+    * all the lines come from the first point
 
 If you were to draw a circle, which of the modes above would you use and why?
+fan because it seems the simplest and would also look like a shell which is cool
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+nothing is drawn!
 
 ## Extra Time?
 
