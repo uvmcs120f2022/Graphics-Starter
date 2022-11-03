@@ -14,7 +14,7 @@ void init() {
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(0.0f, 3.0f, 4.0f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -37,8 +37,28 @@ void display() {
     /*
      * Draw here
      */
+    glColor3f(1.0, 2.0, 3.5);
+    glBegin(GL_QUADS);
+// glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(10, 50);
+    glColor3f(2.0, 4.0, 3.5);
+    glVertex2i(10, 90);
+    glColor3f(2.5, .5, 3.0);
+    glVertex2i(50, 90);
+    glColor3f(1.75, 1.3, 2.6);
+    glVertex2i(50, 50);
+    glEnd();
 
-    
+    glBegin(GL_TRIANGLES);
+    glVertex2i(300,400);
+    glColor3f(2.0, 4.0, 3.5);
+    glVertex2i(400, 500);
+    glColor3f(2.5, .5, 3.0);
+    glVertex2i(70, 80);
+    glColor3f(1.75, 1.3, 2.6);
+    glEnd();
+
+
     glFlush();  // Render now
 }
 
