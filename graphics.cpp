@@ -37,8 +37,33 @@ void display() {
     /*
      * Draw here
      */
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 0.0);
+    glVertex2i(60, 100);
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(60, 140);
+    glColor3f(0.0, 1.0, 0.0);
+    glVertex2i(100, 100);
+    glColor3f(0.0, 0.0, 1.0);
+    glVertex2i(100, 140);
+    glEnd();
 
-    
+    glColor3f(1.0,0.0,0.0);
+    glBegin(GL_TRIANGLES);
+    glVertex2i(160,200);
+    glVertex2i(160,240);
+    glVertex2i(180,260);
+    glEnd();
+
+    glColor3f(1.0,0.0,0.0);
+    glBegin(GL_TRIANGLE_STRIP);
+    glVertex2i(260,300);
+    glVertex2i(260,340);
+    glVertex2i(280,360);
+    glVertex2i(300,380);
+    glEnd();
+
     glFlush();  // Render now
 }
 
@@ -101,7 +126,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
     wd = glutCreateWindow("Fun with Drawing!" /* title */ );
     
