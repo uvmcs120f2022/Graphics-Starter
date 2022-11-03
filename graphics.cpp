@@ -14,7 +14,7 @@ void init() {
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(0.3f, 0.6f, 0.8f, 0.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -33,10 +33,18 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
-     */
+
+    // Set the color to draw
+// Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 0.0, 1.0);
+    glBegin(GL_QUADS);
+
+// glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(10, 50);
+    glVertex2i(50, 90);
+    glVertex2i(10, 90);
+    glVertex2i(50, 50);
+    glEnd();
 
     
     glFlush();  // Render now
@@ -52,6 +60,7 @@ void kbd(unsigned char key, int x, int y)
     }
     
     glutPostRedisplay();
+
 }
 
 void kbdS(int key, int x, int y) {
@@ -101,9 +110,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("poopybutt!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
