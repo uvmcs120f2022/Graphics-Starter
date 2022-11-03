@@ -46,9 +46,9 @@ void display() {
     glColor3f(0.5,1.0,0.0);
     glVertex2i(60, 140);
     glColor3f(0.5,0.0,0.5);
-    glVertex2i(100, 140);
-    glColor3f(1.0,0.5,0.5);
     glVertex2i(100, 100);
+    glColor3f(1.0,0.5,0.5);
+    glVertex2i(100, 140);
     glEnd();
 
     
