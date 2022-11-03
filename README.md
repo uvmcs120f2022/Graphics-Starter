@@ -103,6 +103,7 @@ If you were to draw a circle, which of the modes above would you use and why?
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
 
+
 ## Extra Time?
 
 Make your code more dynamic: use global variables for the coordinates and color of a shape.
