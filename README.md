@@ -109,7 +109,7 @@ Besides GL_QUADS, there are many other shape options:
       * It just creates a new triangle.
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
-      * 
+      * It connects to the previous 3 vertices.
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -119,6 +119,7 @@ Besides GL_QUADS, there are many other shape options:
     * How does this one look different?
 
 If you were to draw a circle, which of the modes above would you use and why?
+* The first vertex of a triangle fan acts like a hub. The vertices following connect with the previous
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
 
