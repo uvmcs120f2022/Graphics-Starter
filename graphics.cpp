@@ -50,7 +50,7 @@ void display() {
     glEnd();
 
     glBegin(GL_TRIANGLES);
-    glVertex2i(300,400);
+    glVertex2i(30,40);
     glColor3f(2.0, 4.0, 3.5);
     glVertex2i(400, 500);
     glColor3f(2.5, .5, 3.0);
