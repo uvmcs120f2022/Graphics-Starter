@@ -59,6 +59,19 @@ void display() {
     glEnd();
 
 
+    glBegin(GL_TRIANGLE_STRIP);
+    glVertex2i(200,270);
+    glColor3f(2.0, 4.0, 3.5);
+    glVertex2i(200, 280);
+    glColor3f(2.5, .5, 3.0);
+    glVertex2i(300, 350);
+    glColor3f(1.75, 1.3, 2.6);
+    glVertex2i(400, 450);
+    glColor3f(1.75, 1.3, 2.6);
+    glVertex2i(370, 380);
+    glColor3f(1.75, 1.3, 2.6);
+    glEnd();
+
     glFlush();  // Render now
 }
 
