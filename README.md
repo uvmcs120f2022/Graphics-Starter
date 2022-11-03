@@ -78,19 +78,26 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+    * 0.0 to 1.0
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+    * right
     * Is the positive y direction up or down?
+    * down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+    * It is a red square inside the quad
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+    * It is not complete
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+    * 2 triangles are drawn
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+    * two vertices is nearly to
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -98,8 +105,10 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+    * vertices connect differently
 
 If you were to draw a circle, which of the modes above would you use and why?
+GL_TRIANGLE_FAN
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
 
