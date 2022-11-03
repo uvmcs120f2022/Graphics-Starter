@@ -76,6 +76,16 @@ void display() {
     glVertex2i(200, 500);
     glEnd();
 
+    //Draw a triangle fan
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(0.0,0.0,1.0);
+    glVertex2i(500, 200);
+    glColor3f(1.0,1.0,0.0);
+    glVertex2i(500, 250);
+    glVertex2i(525, 275);
+    //4th coordinates and beyond
+
+    glEnd();
     
     glFlush();  // Render now
 }
