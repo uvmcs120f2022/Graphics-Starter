@@ -78,11 +78,12 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+    * 0-1
 * Move the quad down and to the right by 50 pixels.
-    * Is the positive x direction left or right?
-    * Is the positive y direction up or down?
+    * Is the positive x direction left or right? right
+    * Is the positive y direction up or down? up
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
-    * Describe the quad's appearance.
+    * Describe the quad's appearance. Beautiful
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
 
