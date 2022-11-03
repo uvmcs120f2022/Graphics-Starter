@@ -7,21 +7,21 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 600;
+    height = 400;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(0.78f, 0.64f, 0.78f, 0.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
  whenever the window needs to be re-painted. */
 void display() {
     // Tell OpenGL to use the whole window for drawing
-    glViewport(0, 0, width, height); // DO NOT CHANGE THIS LINE (unless you're on a Mac running Catalina)
+    glViewport(0, 0, 2*width, 2*height); // DO NOT CHANGE THIS LINE (unless you're on a Mac running Catalina)
     
     // Do an orthographic parallel projection with the coordinate
     // system set to first quadrant, limited by screen/window size
@@ -33,12 +33,21 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
+
     /*
-     * Draw here
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_TRIANGLE_FAN);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(60, 100);
+    glVertex2i(60, 62);
+    glVertex2i(85, 75);
+    glVertex2i(112, 97);
+    glVertex2i(143, 110);
+    glEnd();
      */
 
-    
     glFlush();  // Render now
 }
 
@@ -81,7 +90,17 @@ void cursor(int x, int y) {
 // button will be GLUT_LEFT_BUTTON or GLUT_RIGHT_BUTTON
 // state will be GLUT_UP or GLUT_DOWN
 void mouse(int button, int state, int x, int y) {
-    
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_TRIANGLE_FAN);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(60, 100);
+    glVertex2i(60, 62);
+    glVertex2i(85, 75);
+    glVertex2i(112, 97);
+    glVertex2i(143, 110);
+    glEnd();
     glutPostRedisplay();
 }
 
@@ -101,9 +120,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("I am so awesome" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
