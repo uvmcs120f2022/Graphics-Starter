@@ -137,7 +137,12 @@ Besides GL_QUADS, there are many other shape options:
 
 If you were to draw a circle, which of the modes above would you use and why?
 
+Absolutely the Fan.
+
+
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+
+No drawing!
 
 ## Extra Time?
 
