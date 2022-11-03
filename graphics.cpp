@@ -14,7 +14,7 @@ void init() {
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(1.0f, 1.0f, 0.0f, 0.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
@@ -33,10 +33,29 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
-     */
+
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(1/2.0, 2.0, 2.0);
+    //glBegin(GL_QUADS);
+// glVertex2i takes a 2-D (x, y) coordinate
+//    glVertex2i(10, 50);
+//    glColor3f(1/2.0, 1/2.0, 2.0);
+//    glVertex2i(10, 90);
+//    glColor3f(1/2.0, 0.0, 2.0);
+//    glVertex2i(50, 50);
+//    glColor3f(1/6.0, 2.0, 1/2.0);
+//    glVertex2i(50, 90);
+//    glEnd();
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(1/2.0, 0.0, 1/2.0);
+    glVertex2i(30, 150);
+    glColor3f(1/2.0, 1/2.0, 1/2.0);
+    glVertex2i(50, 90);
+    glColor3f(0.0, 1/2.0, 1/2.0);
+    glVertex2i(50, 150);
+
+    glEnd();
 
     
     glFlush();  // Render now
@@ -95,18 +114,30 @@ void timer(int dummy) {
 int main(int argc, char** argv) {
     
     init();
+
+
     
     glutInit(&argc, argv);          // Initialize GLUT
     
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("Yay!" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
+    // Set the color to draw
+// Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_QUADS);
+// glVertex2i takes a 2-D (x, y) coordinate
+    glVertex2i(10, 50);
+    glVertex2i(10, 90);
+    glVertex2i(50, 90);
+    glVertex2i(50, 50);
+    glEnd();
     
     // Our own OpenGL initialization
     initGL();

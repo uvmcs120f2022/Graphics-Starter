@@ -49,15 +49,21 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+        it widened/shrunk the window when height/width was changed
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+        The color of the window changed
     * What values make it gray?
+        when they are all the same, ex 1/2 for all values works
     * What values make it yellow?
+        a combination of red and green, ex 1 red and 1 green
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+       the top left corner
 * Change the title.
     * Where is it on the screen?
+        At the top of the window
     
 ## Drawing
 
@@ -78,31 +84,36 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+        The range of colors is from 0-1.
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+        right
     * Is the positive y direction up or down?
+        down
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+       it looks like a gradient that spreads from each vertex to the center
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      it looks like a paper crown..like two triangles in opposite directions
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
-    * Put six coordinates instead of 3. What happens?
+    * Put six coordinates instead of 3. What happens? Another triangle appears. Two triangles!
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
-
+       It connected the last two in the list, ex the two corners facing outwards on my triangle
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
 ![Image of GL_TRIANGLE_FAN](triangle_fan.png)
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
-
+       it looks like a fan of triangles
 If you were to draw a circle, which of the modes above would you use and why?
-
+   i would use triangle fan and make a bunch of fan parts and then it would look like a circle
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
-
+   it doesn't make the shape!
 ## Extra Time?
 
 Make your code more dynamic: use global variables for the coordinates and color of a shape.
