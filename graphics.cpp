@@ -75,6 +75,7 @@ void display() {
     glColor3f(1.0,1.0,1.0);
     glVertex2i(200, 500);
     glEnd();
+
     
     glFlush();  // Render now
 }
