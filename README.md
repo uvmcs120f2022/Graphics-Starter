@@ -49,15 +49,21 @@ We are creating graphics using OpenGL and GLUT.
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
     * What changed when you ran the program?
+      * The window got large since I changed 500 to 1000.
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
     * What changed? 
+      * It became red when I made the red field 1.0.
     * What values make it gray?
+      * Setting all values other than alpha to .5.
     * What values make it yellow?
+      * Red and green set to 1.0.
 * Scroll down to `main` and change the window position. 
     * Where is (0, 0)?
+      * The upper left corner of the screen.
 * Change the title.
     * Where is it on the screen?
+      * The upper left corner of the window.
     
 ## Drawing
 
@@ -78,19 +84,26 @@ Note to Mac users running Catalina: If the red quad shows up in the bottom half 
 
 * Change the color of the quad by modifying the call to `glColor3f`.
     * What is the range of values for each part of the color?
+      * 0 to 1.
 * Move the quad down and to the right by 50 pixels.
     * Is the positive x direction left or right?
+      * Right.
     * Is the positive y direction up or down?
+      * Down.
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
     * Describe the quad's appearance.
+      * It becomes a gradient between the four colors.
 * Swap the third and fourth coordinates of the quad.
     * What does it look like?
+      * It looks like it's missing a triangle cutout at the bottom, and it's sort of crossing over itself.
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
     * Put six coordinates instead of 3. What happens?
+      * It draws two separate triangles.
 * Draw a new shape using GL_TRIANGLE_STRIP.
     * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+      * The previous two vertices.
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
@@ -98,10 +111,13 @@ Besides GL_QUADS, there are many other shape options:
 
 * Draw a new shape using GL_TRIANGLE_FAN.
     * How does this one look different?
+      * It connects the new vertex to the previous vertex and the first vertex.
 
 If you were to draw a circle, which of the modes above would you use and why?
+* Most likely GL_TRIANGLE_FAN so I can use the first vertex as the center of the circle.
 
 Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+* It does not draw. I tried putting a triangle in initGL.
 
 ## Extra Time?
 
