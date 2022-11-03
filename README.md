@@ -48,16 +48,16 @@ We are creating graphics using OpenGL and GLUT.
     
 Read through graphics.h and graphics.cpp and answer the following questions in your branch's README file.
 * Change the dimensions in the init function. 
-    * What changed when you ran the program?
+    * What changed when you ran the program? The dimensions of the window!
 * Change the color in the initGL function. 
 Note: If your graphics program continues to show up as a black box, hide/minimize the executable and show/open it again. If that doesn't fix it, the colors will likely show up once you start drawing in the next section.
-    * What changed? 
-    * What values make it gray?
-    * What values make it yellow?
+    * What changed? The window appeared pink! The color of the space changed.
+    * What values make it gray? all 0.5
+    * What values make it yellow? 1, 1, and 0
 * Scroll down to `main` and change the window position. 
-    * Where is (0, 0)?
+    * Where is (0, 0)? Top left corner
 * Change the title.
-    * Where is it on the screen?
+    * Where is it on the screen? above the window that the program creates
     
 ## Drawing
 
@@ -77,31 +77,33 @@ glEnd();
 Note to Mac users running Catalina: If the red quad shows up in the bottom half of your screen, change the glViewport line at the top of the display function by multiplying the width and height arguments by 2.
 
 * Change the color of the quad by modifying the call to `glColor3f`.
-    * What is the range of values for each part of the color?
+    * What is the range of values for each part of the color? 0.0-1.0
 * Move the quad down and to the right by 50 pixels.
-    * Is the positive x direction left or right?
-    * Is the positive y direction up or down?
+    * Is the positive x direction left or right? right
+    * Is the positive y direction up or down? up
 * Make each vertex a different color by adding calls to `glColor3f` before each call to `glVertex2i`.
-    * Describe the quad's appearance.
+    * Describe the quad's appearance. a gradient of colors
 * Swap the third and fourth coordinates of the quad.
-    * What does it look like?
+    * What does it look like? it looks like i folded it origami style
 
 Besides GL_QUADS, there are many other shape options:
 * Draw a new shape using GL_TRIANGLES (3 coordinates instead of 4).
-    * Put six coordinates instead of 3. What happens?
+    * Put six coordinates instead of 3. What happens? Makes a crazy cool shape
 * Draw a new shape using GL_TRIANGLE_STRIP.
-    * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to?
+    * If you add a vertex n to a triangle strip (where n >= 3), which two vertices does it connect to? 
+    * if n >= 3, vertex n connects to vertex n-1 and n-2
 
 ![Image of GL_TRIANGLE_STRIP](triangle_strip.png)
 
 ![Image of GL_TRIANGLE_FAN](triangle_fan.png)
 
 * Draw a new shape using GL_TRIANGLE_FAN.
-    * How does this one look different?
+    * How does this one look different? every vertex connects to the initial vertex
 
 If you were to draw a circle, which of the modes above would you use and why?
+I would use triangle fan probably and enter a thousand points that are all the same distance from the first vertex
 
-Draw in a function other than display. What happens? (Hint: What *doesn't* happen?)
+Draw in a function other than display. What happens? (Hint: What *doesn't* happen?) nothing is displayed
 
 ## Extra Time?
 

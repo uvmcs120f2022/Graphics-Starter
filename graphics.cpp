@@ -7,21 +7,21 @@ GLdouble width, height;
 int wd;
 
 void init() {
-    width = 500;
-    height = 500;
+    width = 1000;
+    height = 300;
 }
 
 /* Initialize OpenGL Graphics */
 void initGL() {
     // Set "clearing" or background color
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black and opaque
+    glClearColor(1.0f, 0.5f, 1.0f, 1.0f); // Black and opaque
 }
 
 /* Handler for window-repaint event. Call back when the window first appears and
  whenever the window needs to be re-painted. */
 void display() {
     // Tell OpenGL to use the whole window for drawing
-    glViewport(0, 0, width, height); // DO NOT CHANGE THIS LINE (unless you're on a Mac running Catalina)
+    glViewport(0, 0, width*2, height*2); // DO NOT CHANGE THIS LINE (unless you're on a Mac running Catalina)
     
     // Do an orthographic parallel projection with the coordinate
     // system set to first quadrant, limited by screen/window size
@@ -33,10 +33,25 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT); // DO NOT CHANGE THIS LINE
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); // DO NOT CHANGE THIS LINE
-    
-    /*
-     * Draw here
-     */
+
+    // Set the color to draw
+    // Note: you can change this at any time during the drawing process
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_TRIANGLE_STRIP);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glColor3f(1.0, 0.4, 0.4);
+    glVertex2i(60, 100);
+    glColor3f(1.0, 0.4, 0.4);
+    glVertex2i(60, 140);
+    glColor3f(0.2, 0.8, 0.4);
+    glVertex2i(100, 100);
+    glColor3f(1.0, 0.4, 0.4);
+    glVertex2i(100, 140);
+    glColor3f(1.0, 0.4, 0.4);
+    glVertex2i(100, 200);
+    glColor3f(1.0, 0.4, 0.4);
+    glVertex2i(300, 400);
+    glEnd();
 
     
     glFlush();  // Render now
@@ -101,9 +116,9 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_RGBA);
     
     glutInitWindowSize((int)width, (int)height);
-    glutInitWindowPosition(100, 200); // Position the window's initial top-left corner
+    glutInitWindowPosition(0, 0); // Position the window's initial top-left corner
     /* create the window and store the handle to it */
-    wd = glutCreateWindow("Fun with Drawing!" /* title */ );
+    wd = glutCreateWindow("wowee" /* title */ );
     
     // Register callback handler for window re-paint event
     glutDisplayFunc(display);
