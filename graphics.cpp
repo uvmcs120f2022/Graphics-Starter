@@ -40,19 +40,45 @@ void display() {
     // Set the color to draw
     // Note: you can change this at any time during the drawing process
     glColor3f(0.0, 0.0, 0.0);
-    glBegin(GL_QUADS);
-    // glVertext2i takes a 2-D (x, y) coordinate
-    glColor3f(1.0, 0.0, 0.0);
-    glVertex2i(60, 100);
-    glColor3f(0.0, 1.0, 0.0);
-    glVertex2i(60, 140);
-    glColor3f(0.0, 0.0, 1.0);
-    glVertex2i(100, 140);
-    glColor3f(1.0, 1.0, 1.0);
-    glVertex2i(100, 100);
+    glBegin(GL_TRIANGLE_FAN);
+    // glVertex2i takes a 2-D (x, y) coordinate
+    glColor3f(1.0, 1.0, 0.0);
+    glVertex2i(250, 250);
+
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(250, 50);
+
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(300, 58);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(350, 77);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(391, 109);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(423, 150);
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(442, 200);
+
+    glColor3f(1.0, 0.0, 1.0);
+    glVertex2i(450, 250);
+
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(442, 300);
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(423, 350);
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(391, 391);
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(350, 423);
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(300, 442);
+
+    glColor3f(0.0, 1.0, 1.0);
+    glVertex2i(250, 450);
     glEnd();
     
     glFlush();  // Render now
+
 }
 
 // http://www.theasciicode.com.ar/ascii-control-characters/escape-ascii-code-27.html
